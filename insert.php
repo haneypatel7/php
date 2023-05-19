@@ -19,12 +19,12 @@ $name=$_POST['name'];
 $password=$_POST['password'];
 
 
-$servername='localhost';
-$username='root';
-$password='';
-$db='student';
-$con=mysqli_connect($servername,$username,$password,$db);
-
+// $servername='localhost';
+// $username='root';
+// $password='';
+// $db='student';
+// $con=mysqli_connect($servername,$username,$password,$db);
+include 'connection.php';
 if(!$con)
 { 
     die("failed".mysqli_connect_error());
@@ -32,10 +32,11 @@ if(!$con)
 else
 {
 
-$sql="INSERT INTO `student` (`name`, `password`) VALUES ('$name', '$password');";
-
+// $sql="INSERT INTO `student` (`name`, `password`) VALUES ('$name', '$password');";
+$sql="SELECT * FROM `student`";
 $result=mysqli_query($con,$sql);
-
+$num=mysqli_num_rows($result);
+echo $num;
 }
 if($result)
 {
