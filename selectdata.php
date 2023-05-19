@@ -18,8 +18,10 @@ else
 $sql="SELECT * FROM 'student'";
 $rows=mysqli_query($con,$sql);
 
-$num=mysqli_num_rows($rows);
+$num = mysqli_num_rows($rows);
 echo $num;
+
+
 
 
 ?>
